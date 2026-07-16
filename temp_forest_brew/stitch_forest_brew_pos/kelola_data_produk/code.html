@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelola Data - POS Café Mobile</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e2e3e0",
+                        "surface-tint": "#45664d",
+                        "tertiary": "#052d1a",
+                        "on-primary-fixed": "#01210e",
+                        "on-tertiary-fixed-variant": "#294e39",
+                        "on-surface-variant": "#424842",
+                        "surface-container-high": "#e7e8e6",
+                        "inverse-surface": "#2e312f",
+                        "surface-container-highest": "#e2e3e0",
+                        "surface-container": "#edeeeb",
+                        "on-tertiary-fixed": "#002111",
+                        "outline-variant": "#c2c8c0",
+                        "secondary-container": "#bbefc4",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#abcfb2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d9dad8",
+                        "tertiary-fixed-dim": "#a7d0b4",
+                        "on-tertiary-container": "#88b095",
+                        "surface-bright": "#f9faf7",
+                        "inverse-on-surface": "#f0f1ee",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#215031",
+                        "secondary-fixed-dim": "#a0d2aa",
+                        "inverse-primary": "#abcfb2",
+                        "primary": "#0c2d19",
+                        "on-background": "#191c1b",
+                        "on-secondary-container": "#406e4c",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f4f1",
+                        "on-primary-container": "#8cb093",
+                        "secondary-fixed": "#bbefc4",
+                        "outline": "#727972",
+                        "primary-container": "#23432d",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#c6eccd",
+                        "secondary": "#3a6847",
+                        "on-primary-fixed-variant": "#2d4e37",
+                        "on-secondary-fixed": "#00210d",
+                        "on-surface": "#191c1b",
+                        "on-error-container": "#93000a",
+                        "background": "#f9faf7",
+                        "surface": "#f9faf7",
+                        "tertiary-container": "#1e432f",
+                        "tertiary-fixed": "#c3eccf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "margin-tablet": "24px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "title-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0; }
+        .material-symbols-rounded { font-variation-settings: 'FILL' 1; font-family: 'Material Symbols Rounded', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative pb-28">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-20 bg-background sticky top-0 z-40">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">POS Café Mobile</h1>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col w-full max-w-screen-md mx-auto relative px-margin-mobile">
+<!-- Tabs -->
+<div class="flex border-b border-surface-variant w-full mb-md">
+<button class="flex-1 pb-sm font-label-lg text-label-lg text-primary border-b-2 border-primary transition-all text-center">
+                Produk
+            </button>
+<button class="flex-1 pb-sm font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-all text-center">
+                Kategori
+            </button>
+</div>
+<!-- Search Bar -->
+<div class="mb-lg">
+<div class="relative flex items-center w-full h-14 bg-surface-container-low rounded-[28px] px-md group focus-within:ring-2 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-sm" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none outline-none font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant focus:ring-0 p-0" placeholder="Cari produk..." type="text"/>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 gap-md pb-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-[28px] shadow-[0_2px_4px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col transition-transform active:scale-[0.98]">
+<div class="w-full h-32 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A top-down shot of a beautifully crafted artisanal matcha latte in a ceramic mug, resting on a clean wooden table. The lighting is soft, natural, and bright, emphasizing a calm, organic coffee shop aesthetic. High-quality editorial style photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkUminzcL5vqZW1Ef4S8rykCNZHBKpVRx5fa212W6zKlRP-p7sDRdV4uDgfBadYlFeOp2FVfTYvCiHuPUk16k2w7GQf6ie_LoJyIMaV4VCPby3HSp5uzkpJAXP-l_ZFqA1GKz7YcXnfeFzqZ3mjYk-zgvacdR9cy40MTNBBNUNBLDDFVOyOHsirruhs2oixyAYfWSeHGhbdXHagSTp7viysJ9lNNJSgVGjkIUG27JXV-kk4qP34YwKOg"/>
+</div>
+<div class="p-md flex flex-col flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs truncate">Matcha Latte</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Rp 35.000</p>
+<div class="mt-auto flex justify-end gap-xs pt-sm border-t border-surface-variant/50">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[28px] shadow-[0_2px_4px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col transition-transform active:scale-[0.98]">
+<div class="w-full h-32 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a freshly baked butter croissant on a minimalist white plate. Golden brown, flaky texture illuminated by soft morning sunlight in a modern cafe setting. The background is slightly blurred to focus on the pastry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMq1dfeG9Vn9T2jvEtI4iAb9G6R_yLuOWNd5h6P93ASBMkjstw5vjotw4p1-wBN3la5XWHpb83JWaBeACMt_YYVf3ENEgpynxp_3HZOgKHNlvtqq_RqyUWhfZB-qUETUWzUXa7lWLzk3NYsZ9Y90D1ZLVKkJTYwM0pKGZ7QT1v3yV5MoKuT2hC1bD2_N21i3BhUcrj5Ql4eq4vvDrzIC5A04ie534vqOi6V5fMCQaHMCH6zHjy_rPYaA"/>
+</div>
+<div class="p-md flex flex-col flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs truncate">Butter Croissant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Rp 28.000</p>
+<div class="mt-auto flex justify-end gap-xs pt-sm border-t border-surface-variant/50">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-[28px] shadow-[0_2px_4px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col transition-transform active:scale-[0.98]">
+<div class="w-full h-32 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="An iced caramel macchiato layered beautifully in a clear tall glass. Swirls of caramel and milk contrast sharply against rich dark espresso. Set against a clean, light-colored countertop in a modern retail coffee environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZP2m_WPTjsGxto6QBDA4PG1qd81EfshPPgUkOQ2YM5RfaYXP2E4Xd50SfoSE3jAw60-88-rvjaWPkjO6XqrqWLML5ESr9dMsswMqDTltOF30igN_-D-vs2omi52Z1BGnq7xeYgwJ91hoAXe1OjEyo0L1vlqQq-qjmRHgWDJDV-hI5HffUantCnzh2ABzSFhLpuf3ouXG3yZ7wlFbO46DjrVu0dUrdJEwWmPTVScH6tdlLFi4vETAX4w"/>
+</div>
+<div class="p-md flex flex-col flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs truncate">Caramel Macchiato</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Rp 42.000</p>
+<div class="mt-auto flex justify-end gap-xs pt-sm border-t border-surface-variant/50">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-[28px] shadow-[0_2px_4px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col transition-transform active:scale-[0.98]">
+<div class="w-full h-32 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A slice of rich dark chocolate cake on a modern matte black saucer. The texture of the frosting is thick and glossy, presented in a bright, botanical-themed cafe environment. High contrast, appetizing food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDimaXtEdncepvK_edStXiV-o-tn2YoGbXWtyYKB5BdTAWda8QCCOco64eSb6yV6c_ld1wrqCp8apuiTVx_0cMgvaqK3ou2J9SMgbOwumxNG_HFwCTTG_y0m19Ve-LLuEl0InCD1QzTDQo2gX2tN9fvdQ8Z4YShZc8K_ezCEdMAT04whESloxV9PNWqYPX5071gTeitiXVZ0fskbNa0Y5cuAisTFYEovhVawaH-WK2NepG3JVxzDOgGcg"/>
+</div>
+<div class="p-md flex flex-col flex-1">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-xs truncate">Choco Cake</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Rp 38.000</p>
+<div class="mt-auto flex justify-end gap-xs pt-sm border-t border-surface-variant/50">
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-error hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed right-margin-mobile bottom-28 w-14 h-14 bg-primary-container text-on-primary-container rounded-[16px] flex items-center justify-center shadow-lg hover:shadow-xl active:scale-90 transition-all duration-200 z-40">
+<span class="material-symbols-rounded text-[28px]" data-icon="add" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.04)] rounded-t-lg">
+<!-- Katalog (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container active:scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Katalog</span>
+</button>
+<!-- Kelola Data (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-lg px-6 py-2 active:scale-90 transition-all duration-200 min-w-16">
+<span class="material-symbols-rounded mb-1" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-md text-label-md">Kelola Data</span>
+</button>
+<!-- Transaksi (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container active:scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Transaksi</span>
+</button>
+<!-- Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container active:scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+</body></html>

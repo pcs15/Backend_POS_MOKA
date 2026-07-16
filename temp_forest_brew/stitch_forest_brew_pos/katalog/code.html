@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Katalog - POS Café Mobile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e2e3e0",
+                      "surface-tint": "#45664d",
+                      "tertiary": "#052d1a",
+                      "on-primary-fixed": "#01210e",
+                      "on-tertiary-fixed-variant": "#294e39",
+                      "on-surface-variant": "#424842",
+                      "surface-container-high": "#e7e8e6",
+                      "inverse-surface": "#2e312f",
+                      "surface-container-highest": "#e2e3e0",
+                      "surface-container": "#edeeeb",
+                      "on-tertiary-fixed": "#002111",
+                      "outline-variant": "#c2c8c0",
+                      "secondary-container": "#bbefc4",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#abcfb2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-dim": "#d9dad8",
+                      "tertiary-fixed-dim": "#a7d0b4",
+                      "on-tertiary-container": "#88b095",
+                      "surface-bright": "#f9faf7",
+                      "inverse-on-surface": "#f0f1ee",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#215031",
+                      "secondary-fixed-dim": "#a0d2aa",
+                      "inverse-primary": "#abcfb2",
+                      "primary": "#0c2d19",
+                      "on-background": "#191c1b",
+                      "on-secondary-container": "#406e4c",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f3f4f1",
+                      "on-primary-container": "#8cb093",
+                      "secondary-fixed": "#bbefc4",
+                      "outline": "#727972",
+                      "primary-container": "#23432d",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#c6eccd",
+                      "secondary": "#3a6847",
+                      "on-primary-fixed-variant": "#2d4e37",
+                      "on-secondary-fixed": "#00210d",
+                      "on-surface": "#191c1b",
+                      "on-error-container": "#93000a",
+                      "background": "#f9faf7",
+                      "surface": "#f9faf7",
+                      "tertiary-container": "#1e432f",
+                      "tertiary-fixed": "#c3eccf"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px",
+                      "28": "28px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "lg": "24px",
+                      "gutter": "16px",
+                      "margin-tablet": "24px",
+                      "xs": "8px",
+                      "xl": "32px",
+                      "base": "4px",
+                      "margin-mobile": "16px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "title-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "57px",
+                              {
+                                      "lineHeight": "64px",
+                                      "letterSpacing": "-0.25px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "22px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.1px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body { background-color: #f9faf7; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .shadow-soft { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04); }
+        .shadow-sheet { box-shadow: 0 -4px 12px rgba(35, 67, 45, 0.08); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg h-screen overflow-hidden flex flex-col relative pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-20 bg-background dark:bg-background docked full-width top-0 z-10">
+<div class="flex items-center gap-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a barista with a warm smile, wearing a dark green apron in a modern cafe setting. The lighting is bright and natural, highlighting a professional and grounded aesthetic suitable for a high-end POS interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBelz_uOdWzdKNFrFHkzJI5dEDHcQngRBoa1QmZscWiShjT04GugRmV-lWCEQ1Ebpg5cVxqbCzc-0a-ixWjrjKF-Rc_pZdQVtyuzWhTSgJd17M854KN2AxiuGnLUDWQ2A0bH91AVQsQnl-cSgKnTIMqTlfdBLgI1g6MwwHNyMGwgVv9TGNYv8gL8nkI-x6VqWKFejQFL-9CqSrAF37oG6LP6tvWg0H1KnT54mE6jUSlppg2EHTU5mzDGg"/>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">POS Café Mobile</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto px-margin-mobile pt-sm pb-40 hide-scrollbar flex flex-col md:flex-row gap-gutter">
+<!-- Left Side: Catalog -->
+<div class="flex-1 w-full flex flex-col gap-lg">
+<!-- Search Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container rounded-[28px] border-none focus:ring-2 focus:ring-primary text-on-surface font-body-lg outline-none placeholder:text-on-surface-variant" placeholder="Cari menu..." type="text"/>
+</div>
+<!-- Categories Chips -->
+<div class="flex gap-xs overflow-x-auto hide-scrollbar pb-2">
+<button class="px-6 py-2 rounded-[28px] bg-secondary text-on-secondary font-label-lg whitespace-nowrap shrink-0">Kopi</button>
+<button class="px-6 py-2 rounded-[28px] bg-background border border-[#8EB69B] text-on-surface-variant font-label-lg whitespace-nowrap shrink-0">Non-Kopi</button>
+<button class="px-6 py-2 rounded-[28px] bg-background border border-[#8EB69B] text-on-surface-variant font-label-lg whitespace-nowrap shrink-0">Pastry</button>
+<button class="px-6 py-2 rounded-[28px] bg-background border border-[#8EB69B] text-on-surface-variant font-label-lg whitespace-nowrap shrink-0">Snack</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<div class="bg-surface rounded-[28px] shadow-soft overflow-hidden flex flex-col relative group">
+<div class="h-32 w-full bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A perfectly poured latte in a pristine white ceramic cup sitting on a light wooden table. The lighting is soft and natural, emphasizing the creamy texture of the latte art and the premium, organic feel of a modern coffee shop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH4NdshMRIsVweBmLkoDd_ReDPAxcJDO4jhN19sgktfUGZsUgJUCQXlrL7N1WVXf7Pj2GiDkiJn-X808YRRAFKJiPfA12DSg1W_7IPyiUO5BT6UimvzE7ycwhUMaczHJHe0qDpEK0mfJoK1BmC7dC5x6N4E8dfhRgL4Suu3U_h9uIcm2cVPNsaA3DLM2SJhlEywYwC-z6nQQ8ulVAsF_rZSpo4YC2a39SJHM7tAseP-87hOvilWeJKjQ"/>
+</div>
+<div class="p-sm flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-1">Caffè Latte</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rp 35.000</p>
+</div>
+</div>
+<button class="absolute bottom-sm right-sm w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+<!-- Product 2 -->
+<div class="bg-surface rounded-[28px] shadow-soft overflow-hidden flex flex-col relative group">
+<div class="h-32 w-full bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="An iced americano in a clear glass with condensation, filled with ice cubes. Resting on a clean, light surface with subtle shadows. The aesthetic is crisp, refreshing, and clean, fitting a premium point-of-sale interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT8vJLHa2lDXgI72y8TKKmZ6cvv15KNlkhxz1GkldU-uJGaf3Qq9fdxo4b1fj1XKYP_V0u65ESAKgn45LnA73tO-ncMHN78DgP3wMhyrv3XcxlmOTQq5PBScTY-o7LsNrTGFT0nLl9n79kPRWuGGUG_SBZV3oAn2hJOdjtlsL19-wMgE9CCHlZ72281TOUSxR9zOKck_BtXNQsM3vHSVckFtw8HeNVeQjx7b_tJAZ-g2EDyqRMxxl6zw"/>
+</div>
+<div class="p-sm flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-1">Iced Americano</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rp 28.000</p>
+</div>
+</div>
+<button class="absolute bottom-sm right-sm w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+<!-- Product 3 -->
+<div class="bg-surface rounded-[28px] shadow-soft overflow-hidden flex flex-col relative group">
+<div class="h-32 w-full bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A rich, dark espresso shot in a small ceramic cup, sitting on a matching saucer. Steam is lightly rising. The setting is minimal and focused, highlighting the quality of the coffee for a high-end POS system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo_LAUCgDR0i-usboE-VkKpwd56_Qu-ZIaa8dBnP0otKePe0rUFPvupXu5aaQa_TURKtV77xPmNMVgvL_wlaBb9NeXvLH4nEKACS1sHDW85HJTHaVcAksHEfj0UVCp8CNWFhtV4In_GDNgFE1B6WjhJP1zTLs2edn6G9mm0KpsSUIzThT8KMP4AgpJz2RKr8g1KsKP9ntg1BJoCKyFWIFhmX1qTUEcj0-6_pUV20kVWrl9aaLfMsGj3Q"/>
+</div>
+<div class="p-sm flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-1">Espresso</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rp 22.000</p>
+</div>
+</div>
+<button class="absolute bottom-sm right-sm w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+<!-- Product 4 -->
+<div class="bg-surface rounded-[28px] shadow-soft overflow-hidden flex flex-col relative group">
+<div class="h-32 w-full bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A beautifully crafted cappuccino with thick foam and cocoa powder dusted on top, in a wide ceramic mug. The lighting is warm and inviting, representing a cozy yet professional cafe environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGoVtgWTiDTTBV_K-PfHaaOq732y3MBcqKID_TxJ4I8z3Kw-M5GS74TB8xRS5J5uWStMhCMZs8_CjQtKacCQr9WKc1lkWwba5cii_TnGiL5xPV-SJhq1QidVcqeqaTSA_zVxBUZp99ShJUgDKHJWRLGO2TvEbzcT1z26_S0cqiSuRzZ1gQ35o0Kd_ySfhLRU7EsOCehKvnFHKq2GtfZTmwry-XPtPm-iBMPUU1I8V8ixFs5d9BTfurOw"/>
+</div>
+<div class="p-sm flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-1">Cappuccino</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rp 35.000</p>
+</div>
+</div>
+<button class="absolute bottom-sm right-sm w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Sheet / Cart Summary (Mobile overlay, Tablet pinned right) -->
+<div class="fixed bottom-[88px] left-0 w-full bg-surface rounded-t-[28px] shadow-sheet z-40 px-margin-mobile py-lg md:relative md:bottom-0 md:w-1/3 md:h-[calc(100vh-80px)] md:rounded-l-[28px] md:rounded-tr-none md:shadow-none md:border-l border-surface-container-highest flex flex-col md:hidden">
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto mb-4 md:hidden"></div>
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-title-lg text-title-lg text-on-surface">Pesanan (2)</h2>
+<button class="text-error font-label-lg text-label-lg">Clear</button>
+</div>
+<div class="flex-1 overflow-y-auto hide-scrollbar flex flex-col gap-sm mb-md">
+<!-- Cart Item 1 -->
+<div class="flex justify-between items-center bg-surface-container-lowest p-2 rounded-xl">
+<div class="flex-1">
+<p class="font-label-lg text-label-lg text-on-surface">1x Caffè Latte</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Less Sugar</p>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface">Rp 35.000</p>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex justify-between items-center bg-surface-container-lowest p-2 rounded-xl">
+<div class="flex-1">
+<p class="font-label-lg text-label-lg text-on-surface">1x Iced Americano</p>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface">Rp 28.000</p>
+</div>
+</div>
+<div class="pt-sm border-t border-surface-container-highest">
+<div class="flex justify-between items-center mb-lg">
+<span class="font-body-lg text-body-lg text-on-surface-variant">Subtotal</span>
+<span class="font-title-lg text-title-lg text-on-surface">Rp 63.000</span>
+</div>
+<button class="w-full h-[56px] rounded-[28px] bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center shadow-sm active:scale-95 transition-transform">
+                Bayar Rp 63.000
+            </button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest dark:bg-surface-container-high shadow-[0_-2px_12px_rgba(0,0,0,0.04)] docked full-width bottom-0 rounded-t-lg md:hidden">
+<!-- Katalog (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-lg px-6 py-2 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-md text-label-md mt-1">Katalog</span>
+</button>
+<!-- Kelola Data -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span class="font-label-md text-label-md mt-1">Kelola Data</span>
+</button>
+<!-- Transaksi -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+<span class="font-label-md text-label-md mt-1">Transaksi</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container dark:hover:bg-surface-variant rounded-lg active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

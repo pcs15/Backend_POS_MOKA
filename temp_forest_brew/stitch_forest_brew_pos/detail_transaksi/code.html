@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Transaksi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e2e3e0",
+                        "surface-tint": "#45664d",
+                        "tertiary": "#052d1a",
+                        "on-primary-fixed": "#01210e",
+                        "on-tertiary-fixed-variant": "#294e39",
+                        "on-surface-variant": "#424842",
+                        "surface-container-high": "#e7e8e6",
+                        "inverse-surface": "#2e312f",
+                        "surface-container-highest": "#e2e3e0",
+                        "surface-container": "#edeeeb",
+                        "on-tertiary-fixed": "#002111",
+                        "outline-variant": "#c2c8c0",
+                        "secondary-container": "#bbefc4",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#abcfb2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d9dad8",
+                        "tertiary-fixed-dim": "#a7d0b4",
+                        "on-tertiary-container": "#88b095",
+                        "surface-bright": "#f9faf7",
+                        "inverse-on-surface": "#f0f1ee",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#215031",
+                        "secondary-fixed-dim": "#a0d2aa",
+                        "inverse-primary": "#abcfb2",
+                        "primary": "#0c2d19",
+                        "on-background": "#191c1b",
+                        "on-secondary-container": "#406e4c",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f4f1",
+                        "on-primary-container": "#8cb093",
+                        "secondary-fixed": "#bbefc4",
+                        "outline": "#727972",
+                        "primary-container": "#23432d",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#c6eccd",
+                        "secondary": "#3a6847",
+                        "on-primary-fixed-variant": "#2d4e37",
+                        "on-secondary-fixed": "#00210d",
+                        "on-surface": "#191c1b",
+                        "on-error-container": "#93000a",
+                        "background": "#f9faf7",
+                        "surface": "#f9faf7",
+                        "tertiary-container": "#1e432f",
+                        "tertiary-fixed": "#c3eccf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "margin-tablet": "24px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "title-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .receipt-edge {
+            background-image: radial-gradient(circle at 10px 0, transparent 10px, #ffffff 11px);
+            background-size: 24px 20px;
+            background-repeat: repeat-x;
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: -19px;
+            left: 0;
+            z-index: 10;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top App Bar (Task-Focused / Detail View) -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-20 bg-background sticky top-0 z-50">
+<button class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container-low active:scale-95 transition-all duration-200 text-on-surface">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg text-primary flex-1 text-center pr-12">Detail Transaksi</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile pb-xl flex flex-col items-center">
+<!-- Digital Receipt Card -->
+<div class="w-full max-w-md bg-surface-container-lowest rounded-[28px] shadow-[0_4px_12px_rgba(0,0,0,0.04)] relative pb-lg flex flex-col mt-sm">
+<!-- Receipt Header -->
+<div class="px-lg pt-xl pb-md flex flex-col items-center border-b border-surface-container-high border-dashed mx-md">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-[32px]">receipt_long</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-base">Lunas</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">27 Okt 2023 • 14:30</p>
+<div class="mt-md bg-surface-container py-xs px-sm rounded-full">
+<span class="font-label-lg text-label-lg text-primary tracking-widest">#TXN-1024</span>
+</div>
+</div>
+<!-- Itemized List -->
+<div class="px-lg py-md flex flex-col gap-sm border-b border-surface-container-high border-dashed mx-md">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Espresso</span>
+<span class="font-body-md text-body-md text-on-surface-variant">2 x Rp 25.000</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Rp 50.000</span>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Croissant</span>
+<span class="font-body-md text-body-md text-on-surface-variant">1 x Rp 30.000</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Rp 30.000</span>
+</div>
+</div>
+<!-- Summary -->
+<div class="px-lg py-md flex flex-col gap-xs mx-md border-b border-surface-container-high border-dashed">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-body-md text-body-md text-on-surface">Rp 80.000</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Pajak (11%)</span>
+<span class="font-body-md text-body-md text-on-surface">Rp 8.800</span>
+</div>
+<div class="flex justify-between items-center mt-xs pt-xs">
+<span class="font-title-lg text-title-lg text-primary">Total</span>
+<span class="font-title-lg text-title-lg text-primary">Rp 88.800</span>
+</div>
+</div>
+<!-- Payment Details -->
+<div class="px-lg py-md flex flex-col gap-xs mx-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Metode Pembayaran</span>
+<span class="font-label-md text-label-md text-on-surface bg-surface-container-low px-2 py-1 rounded">Tunai</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Dibayar</span>
+<span class="font-body-md text-body-md text-on-surface">Rp 100.000</span>
+</div>
+<div class="flex justify-between items-center text-secondary">
+<span class="font-label-lg text-label-lg">Kembalian</span>
+<span class="font-label-lg text-label-lg">Rp 11.200</span>
+</div>
+</div>
+<!-- Stylized bottom edge for receipt feel -->
+<div class="receipt-edge"></div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full max-w-md mt-10 flex flex-col gap-md">
+<button class="w-full h-[56px] bg-primary text-on-primary rounded-[28px] font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[20px]">print</span>
+                Cetak Struk
+            </button>
+<button class="w-full h-[56px] bg-secondary-container bg-opacity-30 text-primary rounded-[28px] font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                Kirim e-Receipt
+            </button>
+</div>
+</main>
+</body></html>
